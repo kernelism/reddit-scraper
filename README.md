@@ -86,6 +86,63 @@ reddit-scraper -d month -s subreddits.json -l 50
 
 Data is saved in JSON files under the `data/` directory, one file per subreddit.
 
+### Output Format
+
+The scraper generates JSON files with a clean, structured format that's easy to work with. Here's what the output looks like:
+
+```json
+[
+  {
+    "post_body": "This is the title of the post",
+    "post_user": "username123",
+    "post_time": "2023-04-15T14:30:45",
+    "comments": [
+      {
+        "body": "This is a top-level comment",
+        "user": "commenter456",
+        "time": "2023-04-15T15:20:10",
+        "replies": [
+          {
+            "body": "This is a reply to the comment",
+            "user": "replier789",
+            "time": "2023-04-15T16:05:30",
+            "replies": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "post_body": "Another post title",
+    "post_user": "anotheruser",
+    "post_time": "2023-04-14T09:15:22",
+    "comments": []
+  }
+]
+```
+
+Key features of the output format:
+
+- **Posts**: Each post is represented as an object with:
+  - `post_body`: The title of the post
+  - `post_user`: The username of the post author
+  - `post_time`: ISO-formatted timestamp of when the post was created
+  - `comments`: Array of comments on the post
+
+- **Comments**: Each comment is represented as an object with:
+  - `body`: The text content of the comment
+  - `user`: The username of the comment author
+  - `time`: ISO-formatted timestamp of when the comment was created
+  - `replies`: Array of replies to the comment (nested comments)
+
+- **Nested Structure**: Comments can have replies, which can have their own replies, creating a tree structure that preserves the conversation flow
+
+This format makes it easy to:
+- Analyze post and comment content
+- Track user activity
+- Measure engagement over time
+- Import into data analysis tools
+
 ## Development
 
 ### Project Structure
