@@ -2,13 +2,6 @@
 
 A simple tool to scrape posts and comments from Reddit subreddits.
 
-## What it does
-
-- Scrapes top posts and their comments from specified subreddits
-- Supports monthly or yearly time periods
-- Can limit the number of posts scraped per subreddit
-- Saves data in JSON format for easy analysis
-
 ## How it works
 
 ### The Smart Way to Scrape Reddit
@@ -88,8 +81,6 @@ Data is saved in JSON files under the `data/` directory, one file per subreddit.
 
 ### Output Format
 
-The scraper generates JSON files with a clean, structured format that's easy to work with. Here's what the output looks like:
-
 ```json
 [
   {
@@ -121,28 +112,6 @@ The scraper generates JSON files with a clean, structured format that's easy to 
 ]
 ```
 
-Key features of the output format:
-
-- **Posts**: Each post is represented as an object with:
-  - `post_body`: The title of the post
-  - `post_user`: The username of the post author
-  - `post_time`: ISO-formatted timestamp of when the post was created
-  - `comments`: Array of comments on the post
-
-- **Comments**: Each comment is represented as an object with:
-  - `body`: The text content of the comment
-  - `user`: The username of the comment author
-  - `time`: ISO-formatted timestamp of when the comment was created
-  - `replies`: Array of replies to the comment (nested comments)
-
-- **Nested Structure**: Comments can have replies, which can have their own replies, creating a tree structure that preserves the conversation flow
-
-This format makes it easy to:
-- Analyze post and comment content
-- Track user activity
-- Measure engagement over time
-- Import into data analysis tools
-
 ## Development
 
 ### Project Structure
@@ -166,21 +135,15 @@ reddit-scraper/
 
 ### Pre-commit Hooks
 
-This project uses pre-commit hooks to ensure code quality. To set them up:
-
 ```bash
 pre-commit install
 ```
-
-The hooks will run automatically on commit, or you can run them manually:
 
 ```bash
 pre-commit run --all-files
 ```
 
 ### Testing
-
-Run the tests with:
 
 ```bash
 pytest
