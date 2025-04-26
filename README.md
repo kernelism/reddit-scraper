@@ -154,3 +154,6 @@ For coverage information:
 ```bash
 pytest --cov=. --cov-report=term-missing
 ```
+
+
+>> Disclaimer: This tool is provided for educational and research purposes only. Please use it responsibly and in accordance with Reddit's Terms of Service and API Guidelines. The author of this tool is not responsible for any misuse, abuse, or violations of Reddit's policies that may occur when using this software. Users are solely responsible for ensuring their use of this tool complies with all applicable laws, regulations, and platform terms of service.
