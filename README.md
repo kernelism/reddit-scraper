@@ -9,6 +9,32 @@ A simple tool to scrape posts and comments from Reddit subreddits.
 - Can limit the number of posts scraped per subreddit
 - Saves data in JSON format for easy analysis
 
+## How it works
+
+### The Smart Way to Scrape Reddit
+
+Instead of brute-forcing our way through Reddit's pages, we use a clever approach that's both efficient and respectful of Reddit's servers:
+
+First, we visit the subreddit's top posts page and scroll through it just like a human would. As we scroll, we collect the IDs of all the posts we want to save. This is quick and lightweight - we're just gathering a list of what we want to look at later.
+
+Then, for each post we're interested in, we use Reddit's own API to get all the data in a clean, structured format. We do this by adding `.json` to the end of any Reddit URL, which gives us everything we need in one go - the post itself, all its comments, and all the metadata.
+
+This approach has several advantages:
+- It's much faster than downloading and parsing entire HTML pages
+- We get clean, structured data instead of messy HTML
+- We can easily resume if something goes wrong
+- We're less likely to trigger Reddit's rate limits
+
+### Handling Reddit's Limits
+
+Reddit doesn't like it when people make too many requests too quickly. Our scraper is smart about this:
+
+- If Reddit tells us we're asking for too much too quickly, we save our progress and wait
+- We can pick up right where we left off when we run the scraper again
+- We add small delays between requests to be nice to Reddit's servers
+
+This makes our scraper more reliable and less likely to get blocked.
+
 ## Installation
 
 ### From source
