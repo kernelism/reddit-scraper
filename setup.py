@@ -10,13 +10,13 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 
 setup(
     name="reddit-scraper",
-    version="0.1.0",
-    author="Your Name",
-    author_email="your.email@example.com",
-    description="A simple tool to scrape posts and comments from Reddit subreddits",
+    version="0.1.1",
+    author="Arjhun S (kernelism)",
+    author_email="contactarjhun@gmail.com",
+    description="A CLI tool to scrape Reddit",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/reddit-scraper",
+    url="https://github.com/kernelism/reddit-scraper",
     packages=find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
