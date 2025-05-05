@@ -38,12 +38,6 @@ cd reddit-scraper
 pip install -e .
 ```
 
-### Using pip
-
-```bash
-pip install reddit-scraper
-```
-
 ## Usage
 
 1. Create a `subreddits.json` file with your target subreddits:
